@@ -2,13 +2,13 @@ import { DOMWindow } from 'jsdom';
 import { JSDOM } from 'jsdom';
 import qs from 'qs';
 
-interface Payload {
+export interface Payload {
   from: string;
   to?: string;
   filter?(result: Result): boolean;
 }
 
-interface Result {
+export interface Result {
   game: Game;
   combinations: number[];
   drawDate: Date;
@@ -16,7 +16,7 @@ interface Result {
   winners: number;
 }
 
-type Game =
+export type Game =
   | 'Ultra Lotto 6/58'
   | 'Grand Lotto 6/55'
   | 'Superlotto 6/49'
