@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pcso lotto web scrapper</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.6.1/github-markdown.min.css"
+      integrity="sha512-heNHQxAqmr9b5CZSB7/7NSC96qtb9HCeOKomgLFv9VLkH+B3xLgUtP73i1rM8Gpmfaxb7262LFLJaH/hKXyxyA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        padding: 1rem;
+      }
+    </style>
+    <script src="/app.js" defer></script>
+  </head>
+  <body class="markdown-body">
+    <h1>pcso lotto scrapper</h1>
+    <details>
+      <summary>configuration</summary>
+      <form>
+        <fieldset>
+          <br />
+          <strong> from: &nbsp; </strong>
+          <input type="date" name="date-from" /> &nbsp;
+          <strong> to: &nbsp; </strong>
+          <input type="date" name="date-to" />
+          <hr />
+          <strong> games </strong>
+          <br />
+          <label>
+            <input type="checkbox" name="games" value="Ultra Lotto 6/58" />
+            <span> Ultra Lotto 6/58 </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="Grand Lotto 6/55" />
+            <span> Grand Lotto 6/55 </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="Superlotto 6/49" />
+            <span> Superlotto 6/49 </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="Megalotto 6/45" />
+            <span> Megalotto 6/45 </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="Lotto 6/42" />
+            <span> Lotto 6/42 </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="6D Lotto" />
+            <span> 6D Lotto </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="4D Lotto" />
+            <span> 4D Lotto </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="3D Lotto 5PM" />
+            <span> 3D Lotto 5PM </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="3D Lotto 9PM" />
+            <span> 3D Lotto 9PM </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="2D Lotto 2PM" />
+            <span> 2D Lotto 2PM </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="2D Lotto 2PM" />
+            <span> 2D Lotto 5PM </span> </label
+          >&nbsp; &nbsp;
+          <label>
+            <input type="checkbox" name="games" value="3D Lotto 9PM" />
+            <span> 3D Lotto 9PM </span> </label
+          >&nbsp; &nbsp;
+        </fieldset>
+        <button type="submit">submit</button>
+      </form>
+    </details>
+    <div style="overflow-x: auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Game</th>
+            <th>Combinations</th>
+            <th>Draw date</th>
+            <th>Jackpot</th>
+            <th>Winners</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+</html>

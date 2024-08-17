@@ -1,11 +1,15 @@
-import LottoScrapper from './LottoScrapper';
+import fastifyStatic from '@fastify/static';
+import app from './app';
+import path from 'node:path';
 
 async function main() {
-  const lottoScrapper = new LottoScrapper();
-  const results = await lottoScrapper.get({
-    from: 'August 1 2024',
+  await app.register(fastifyStatic, {
+    root: path.resolve(__dirname, '../public'),
   });
 
-  console.log(results);
+  app.listen({
+    host: '0.0.0.0',
+    port: parseInt(process.env.PORT ?? '3000'),
+  });
 }
 void main();
