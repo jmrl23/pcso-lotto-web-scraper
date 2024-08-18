@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "build"
+    "outDir": "build",
+    "declaration": true
   },
   "extends": "@tsconfig/recommended/tsconfig",
   "include": ["src/**/*.ts"],
