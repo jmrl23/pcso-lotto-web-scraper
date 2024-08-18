@@ -32,6 +32,8 @@ export type Game =
   | '3D Lotto 9PM';
 
 export default class LottoScrapper {
+  private initialDomWindow?: DOMWindow;
+
   constructor(
     private readonly url: string = 'https://www.pcso.gov.ph/SearchLottoResult.aspx',
     private readonly headers: Record<string, string> = {
@@ -174,11 +176,14 @@ export default class LottoScrapper {
   }
 
   private async getInitialDomWindow(): Promise<DOMWindow | null> {
+    if (this.initialDomWindow) return this.initialDomWindow;
+
     const domWindow = await this.getDomWindow(
       fetch(this.url, {
         headers: this.headers,
       }),
     );
+    if (domWindow) this.initialDomWindow = domWindow;
     return domWindow;
   }
 }
