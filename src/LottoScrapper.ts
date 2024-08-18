@@ -2,13 +2,13 @@ import { DOMWindow } from 'jsdom';
 import { JSDOM } from 'jsdom';
 import qs from 'qs';
 
-interface Payload {
+export interface Payload {
   from: string;
   to?: string;
   filter?(result: Result): boolean;
 }
 
-interface Result {
+export interface Result {
   game: Game;
   combinations: number[];
   drawDate: Date;
@@ -16,7 +16,7 @@ interface Result {
   winners: number;
 }
 
-type Game =
+export type Game =
   | 'Ultra Lotto 6/58'
   | 'Grand Lotto 6/55'
   | 'Superlotto 6/49'
@@ -32,6 +32,8 @@ type Game =
   | '3D Lotto 9PM';
 
 export default class LottoScrapper {
+  private initialDomWindow?: DOMWindow;
+
   constructor(
     private readonly url: string = 'https://www.pcso.gov.ph/SearchLottoResult.aspx',
     private readonly headers: Record<string, string> = {
@@ -174,11 +176,14 @@ export default class LottoScrapper {
   }
 
   private async getInitialDomWindow(): Promise<DOMWindow | null> {
+    if (this.initialDomWindow) return this.initialDomWindow;
+
     const domWindow = await this.getDomWindow(
       fetch(this.url, {
         headers: this.headers,
       }),
     );
+    if (domWindow) this.initialDomWindow = domWindow;
     return domWindow;
   }
 }
