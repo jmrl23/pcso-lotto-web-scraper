@@ -2,7 +2,7 @@
   "name": "pcso-lotto-web-scraper",
   "version": "1.0.0",
   "main": "build/main.js",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/jmrl23/pcso-lotto-web-scraper"
