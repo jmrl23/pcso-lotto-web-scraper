@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "build/main.js",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmrl23/pcso-lotto-web-scraper"
+  },
   "scripts": {
     "build": "tsc",
     "start:dev": "ts-node src/main.ts",
@@ -20,5 +24,13 @@
   "dependencies": {
     "jsdom": "^24.1.1",
     "qs": "^6.13.0"
-  }
+  },
+  "keywords": [
+    "lotto",
+    "pcso",
+    "web",
+    "web scraper",
+    "public",
+    "automation"
+  ]
 }
