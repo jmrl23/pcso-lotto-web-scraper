@@ -20,8 +20,8 @@ console.log(results);
 
 ```ts
 interface Payload {
-  from: string;
-  to?: string;
+  from: string | Date;
+  to?: string | Date;
   filter?(result: Result): boolean;
 }
 
