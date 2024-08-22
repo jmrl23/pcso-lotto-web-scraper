@@ -1,3 +1,3 @@
-import LottoScrapper from './LottoScrapper';
+import LottoScraper from './LottoScraper';
 
-export default LottoScrapper;
+export default LottoScraper;
