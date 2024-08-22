@@ -3,6 +3,17 @@
   const tbody = document.querySelector('tbody');
 
   form?.addEventListener('submit', handleSubmit);
+  document.addEventListener('DOMContentLoaded', initialize);
+
+  function initialize() {
+    /** @type {HTMLInputElement} */
+    const dateFromInput = form?.querySelector('[name=date-from]');
+    const date = new Date();
+
+    date.setDate(date.getDate() - 1);
+
+    if (dateFromInput) dateFromInput.value = date.toISOString().slice(0, 10);
+  }
 
   /** @param {Array<{ game: string, combinations: Array<number>, drawDate: string, jackpot: number, winners: number }>} results */
   function renderResults(results) {

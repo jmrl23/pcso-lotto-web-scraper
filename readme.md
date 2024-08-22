@@ -5,9 +5,12 @@ get lotto results
 ## sample usage
 
 ```ts
-const lottoScrapper = new LottoScrapper();
-const results = await lottoScrapper.get({
-  from: 'August 1 2024',
+const lottoScraper = new LottoScraper();
+const results = await lottoScraper.get({
+  from: 'August 1 2014',
+  filter(result) {
+    return result.game === 'Ultra Lotto 6/58';
+  },
 });
 
 console.log(results);
@@ -17,8 +20,8 @@ console.log(results);
 
 ```ts
 interface Payload {
-  from: string;
-  to?: string;
+  from: string | Date;
+  to?: string | Date;
   filter?(result: Result): boolean;
 }
 

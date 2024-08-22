@@ -1,5 +1,5 @@
 import fastify, { FastifyRequest } from 'fastify';
-import LottoScrapper from './LottoScrapper';
+import LottoScraper from './LottoScraper';
 import { resultsGetSchema } from './schema';
 
 const app = fastify({
@@ -24,8 +24,8 @@ app.route({
     }>,
   ) {
     const { from, to, games } = request.body;
-    const lottoScrapper = new LottoScrapper();
-    const results = await lottoScrapper.get({
+    const lottoScraper = new LottoScraper();
+    const results = await lottoScraper.get({
       from,
       to,
       filter(result) {

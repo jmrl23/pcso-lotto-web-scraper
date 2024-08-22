@@ -3,8 +3,8 @@ import { JSDOM } from 'jsdom';
 import qs from 'qs';
 
 export interface Payload {
-  from: string;
-  to?: string;
+  from: string | Date;
+  to?: string | Date;
   filter?(result: Result): boolean;
 }
 
@@ -31,7 +31,7 @@ export type Game =
   | '2D Lotto 5PM'
   | '3D Lotto 9PM';
 
-export default class LottoScrapper {
+export default class LottoScraper {
   private initialDomWindow?: DOMWindow;
 
   constructor(
