@@ -44,7 +44,7 @@ export default class LottoScraper {
     },
   ) {}
 
-  public async get(payload: Payload): Promise<Array<any>> {
+  public async get(payload: Payload): Promise<Array<Result>> {
     const initialDomWindow = await this.getInitialDomWindow();
     if (!initialDomWindow) return [];
 
